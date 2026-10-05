@@ -1,6 +1,12 @@
 body {
     background-color: #F3E9D6;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #9E6D3A;
 }
 
 h1 {
@@ -35,4 +41,14 @@ li {
 
 .cierre-lista {
     color: #437045;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logonavbar {
+    width: 10rem;
+    height: 10rem;
 }
