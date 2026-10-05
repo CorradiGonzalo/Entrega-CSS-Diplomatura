@@ -6,6 +6,9 @@ body {
 }
 
 header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #9E6D3A;
 }
 
@@ -45,10 +48,14 @@ li {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    padding: 3rem;
+    margin: 3rem;
 }
 
 .logonavbar {
-    width: 10rem;
-    height: 10rem;
+    width: 6rem;
+    height: 6rem;
 }
