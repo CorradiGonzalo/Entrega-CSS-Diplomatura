@@ -1,20 +1,64 @@
+/* ===== Base (mobile-first) ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #F3E9D6;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Header y navegación (Flexbox) ===== */
 header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
     background-color: #9E6D3A;
 }
 
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #F3E9D6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.logonavbar {
+    width: 6rem;
+    height: 6rem;
+}
+
+/* ===== Tipografía ===== */
 h1 {
     color: #3E6640;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bolder;
 }
 
@@ -30,10 +74,14 @@ h3 {
 
 p {
     font-size: 1rem;
+    line-height: 1.5;
 }
 
 li {
     font-size: 1rem;
+}
+
+main li {
     font-weight: bolder;
     font-style: oblique;
 }
@@ -46,16 +94,129 @@ li {
     color: #437045;
 }
 
-nav {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+/* ===== Layout: Home (Grid con áreas) ===== */
+/* Mobile: una sola columna, secciones apiladas al 100% */
+.home-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "intro"
+        "plataformas"
+        "migracion"
+        "registros";
     gap: 1.5rem;
-    padding: 3rem;
-    margin: 3rem;
+    padding: 1rem;
+    flex: 1;
 }
 
-.logonavbar {
-    width: 6rem;
-    height: 6rem;
+.area-intro { grid-area: intro; }
+.area-plataformas { grid-area: plataformas; }
+.area-migracion { grid-area: migracion; }
+.area-registros { grid-area: registros; }
+
+/* Listas de registros: columnas fluidas */
+.registros-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* ===== Layout: Sobre Nosotros (Grid con áreas) ===== */
+.nosotros-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "titulo"
+        "historia"
+        "foto";
+    gap: 1.5rem;
+    padding: 1rem;
+    flex: 1;
+}
+
+.area-titulo { grid-area: titulo; }
+.area-historia { grid-area: historia; }
+.area-foto { grid-area: foto; }
+
+.area-foto img {
+    display: block;
+    width: 100%;
+}
+
+/* ===== Contacto ===== */
+.contacto-layout {
+    padding: 1rem;
+    flex: 1;
+}
+
+/* ===== Footer (Flexbox) ===== */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #9E6D3A;
+    color: #F3E9D6;
+}
+
+/* ===== Tablet ===== */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-layout,
+    .nosotros-layout,
+    .contacto-layout {
+        padding: 2rem;
+    }
+
+    .home-layout {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "intro intro"
+            "plataformas migracion"
+            "registros registros";
+    }
+
+    .registros-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* ===== Desktop ===== */
+@media (min-width: 1024px) {
+    .home-layout {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "intro intro intro"
+            "plataformas plataformas migracion"
+            "registros registros registros";
+        gap: 2rem;
+    }
+
+    .registros-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .nosotros-layout {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "titulo titulo"
+            "historia foto";
+        gap: 2rem;
+    }
 }
