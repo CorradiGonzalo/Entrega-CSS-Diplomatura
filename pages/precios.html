@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Precios | Rienda</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-rienda" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/img/rienda_isotipo_512.png" alt="logorienda" class="logonavbar">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuRienda" aria-controls="menuRienda" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuRienda">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobrenosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="precios.html">Precios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pagina-layout">
+        <section class="pagina-intro">
+            <h1>Precios</h1>
+            <p>Elegí el plan de la app que mejor se adapte a tu campo y sumá el hardware de cerco digital cuando lo necesites.</p>
+        </section>
+
+        <!-- Los valores son de ejemplo (USD): reemplazalos por los precios reales -->
+        <section>
+            <h2>Planes de la app</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <article class="card card-body h-100">
+                    <h2 class="h4">Esencial</h2>
+                    <p class="precio">USD 15<small>/mes</small></p>
+                    <ul class="producto-lista">
+                            <li>Registro de ganado</li>
+                            <li>Panel web</li>
+                            <li>Bot de WhatsApp</li>
+                    </ul>
+                    <a href="contacto.html" class="btn btn-rienda mt-auto">Consultar</a>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card card-body h-100 plan-destacado">
+                    <h2 class="h4">Campo</h2>
+                    <p class="precio">USD 35<small>/mes</small></p>
+                    <ul class="producto-lista">
+                            <li>Todo lo de Esencial</li>
+                            <li>Maquinaria e inventario</li>
+                            <li>Usuarios con permisos para empleados</li>
+                    </ul>
+                    <a href="contacto.html" class="btn btn-rienda mt-auto">Consultar</a>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card card-body h-100">
+                    <h2 class="h4">Campo + Cerco</h2>
+                    <p class="precio">USD 60<small>/mes</small></p>
+                    <ul class="producto-lista">
+                            <li>Todo lo de Campo</li>
+                            <li>Mapa en vivo de collares</li>
+                            <li>Alertas de salida de perímetro</li>
+                    </ul>
+                    <a href="contacto.html" class="btn btn-rienda mt-auto">Consultar</a>
+                </article>
+            </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Hardware</h2>
+            <div class="table-responsive">
+                <table class="table table-rienda align-middle">
+                    <thead>
+                        <tr><th scope="col">Producto</th><th scope="col">Precio</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Collar de cerco digital LoRaWAN</td><td>USD 90 c/u</td></tr>
+                        <tr><td>Base LoRaWAN</td><td>USD 350</td></tr>
+                        <tr><td>Kit inicial (1 base + 10 collares)</td><td>USD 1.100</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="nota-precios">Los precios del hardware pueden variar según el tipo de cambio y los costos de importación. Consultanos por tu caso.</p>
+            <a href="contacto.html" class="btn btn-rienda">Pedir presupuesto</a>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <small>&copy; 2026 Gonzalo Corradi. Todos los derechos reservados.</small>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
