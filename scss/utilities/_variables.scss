@@ -1,0 +1,93 @@
+// ===== Paleta de colores =====
+$color-crema: #F3E9D6;
+$color-marron: #9E6D3A;
+$color-verde: #3E6640;
+$color-verde-oscuro: #39593B;
+$color-verde-medio: #437045;
+$color-tarjeta: #FBF6EA;
+$color-campo: #FFFDF8;
+$color-blanco: #FFFFFF;
+$color-fila-hover: #E9DCC0;
+$color-fondo: $color-crema;
+
+// Colores de las diapositivas del carousel
+$colores-slide: (
+    "verde": $color-verde,
+    "marron": $color-marron,
+    "verde-claro": $color-verde-medio
+);
+
+// ===== Tipografía =====
+$fuente-base: Arial, Helvetica, sans-serif;
+$fs-base: 1rem;
+$fs-chico: 0.9rem;
+$fs-h3: 1.2rem;
+$fs-h2: 1.3rem;
+$fs-h1: 2rem;
+$fs-h1-tablet: 2.5rem;
+$fs-precio: 2rem;
+$lh-base: 1.5;
+$peso-normal: normal;
+$peso-negrita: bold;
+$peso-extra: bolder;
+
+// ===== Espaciados =====
+$esp-xxs: 0.125rem;
+$esp-xs: 0.25rem;
+$esp-sm: 0.5rem;
+$esp-md: 0.75rem;
+$esp-base: 1rem;
+$esp-lista: 1.25rem;
+$esp-lg: 1.5rem;
+$esp-xl: 2rem;
+$esp-xxl: 3.5rem;
+
+// ===== Bordes y radios =====
+$borde-fino: 0.1rem;
+$borde-medio: 0.15rem;
+$grosor-anillo: 0.2rem;
+$radio-sm: 0.5rem;
+$radio-md: 0.75rem;
+$radio-lg: 1rem;
+
+// ===== Tamaños =====
+$logo-nav: 4rem;
+$logo-producto: 6rem;
+$tamano-slide-img: 8rem;
+$ancho-carousel: 50rem;
+
+// ===== Breakpoints (mobile-first) =====
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+// ===== Movimiento =====
+$dur-corta: 0.2s;
+$dur-normal: 0.3s;
+$dur-logo: 300ms;
+$dur-entrada: 500ms;
+$dur-latido: 2s;
+$ease-base: ease;
+$ease-salida: ease-out;
+
+// Transformaciones
+$escala-presion: 0.96;
+$escala-toggler: 0.94;
+$escala-tarjeta: 0.99;
+$escala-indicador-hover: 1.3;
+$escala-indicador-presion: 0.9;
+$escala-logo-hover: 1.1;
+$escala-logo-presion: 0.95;
+$giro-logo: -8deg;
+$brillo-hover: 1.1;
+$escala-latido-fuerte: 1.18;
+$escala-latido-suave: 1.08;
+
+// ===== Fondos y sombras con transparencia =====
+$fondo-hover-claro: rgba($color-crema, 0.2);
+$fondo-foco-claro: rgba($color-crema, 0.3);
+$fondo-presion-claro: rgba($color-crema, 0.45);
+$sombra-tarjeta: 0 $esp-sm $esp-base rgba($color-verde, 0.25);
+$anillo-tarjeta: 0 0 0 $grosor-anillo rgba($color-verde, 0.4);
+$anillo-campo: 0 0 0 $grosor-anillo rgba($color-verde, 0.35);
+$anillo-boton: 0 0 0 $grosor-anillo rgba($color-marron, 0.5);
+$anillo-toggler: 0 0 0 $grosor-anillo $color-crema;

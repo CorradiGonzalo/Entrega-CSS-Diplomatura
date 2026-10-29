@@ -1,0 +1,33 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $esp-base;
+    padding: $esp-base;
+    background-color: $color-marron;
+    color: $color-crema;
+
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $esp-base;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        @include enlace-menu;
+        text-decoration: none;
+        padding: $esp-xs $esp-sm;
+    }
+}

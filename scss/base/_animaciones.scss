@@ -1,0 +1,52 @@
+@use "../utilities/variables" as *;
+
+// Varios pasos: entrada suave con opacity y transform
+@keyframes entrada-suave {
+    0% {
+        opacity: 0;
+        transform: translateY($esp-lg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-$esp-xs);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main h1 {
+    animation: entrada-suave $dur-entrada $ease-salida both;
+}
+
+// Latido: el isotipo crece y vuelve, dos veces por ciclo (5 pasos, solo transform)
+@keyframes latido {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale($escala-latido-fuerte);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale($escala-latido-suave);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+}
+
+.slide-img,
+.producto-logo {
+    animation: latido $dur-latido ease-in-out infinite;
+}

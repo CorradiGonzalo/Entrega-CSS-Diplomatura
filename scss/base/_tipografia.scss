@@ -1,0 +1,45 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+h1 {
+    color: $color-verde;
+    font-size: $fs-h1;
+    font-weight: $peso-extra;
+
+    @include tablet {
+        font-size: $fs-h1-tablet;
+    }
+}
+
+h2 {
+    color: $color-verde-oscuro;
+    font-size: $fs-h2;
+}
+
+h3 {
+    color: $color-verde-medio;
+    font-size: $fs-h3;
+}
+
+p {
+    font-size: $fs-base;
+    line-height: $lh-base;
+}
+
+li {
+    font-size: $fs-base;
+}
+
+main li {
+    font-weight: $peso-extra;
+    font-style: oblique;
+}
+
+.item-princ {
+    color: $color-marron;
+}
+
+.cierre-lista {
+    color: $color-verde-medio;
+    margin-top: $esp-lg;
+}

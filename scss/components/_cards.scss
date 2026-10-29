@@ -1,0 +1,24 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.card {
+    background-color: $color-tarjeta;
+    border: $borde-fino solid $color-marron;
+    border-radius: $radio-lg;
+    transition: trans(transform), trans(box-shadow), trans(border-color);
+
+    &:hover {
+        transform: translateY(-$esp-xs);
+        box-shadow: $sombra-tarjeta;
+        border-color: $color-verde;
+    }
+
+    &:focus-within {
+        border-color: $color-verde;
+        box-shadow: $anillo-tarjeta;
+    }
+
+    &:active {
+        transform: scale($escala-tarjeta);
+    }
+}

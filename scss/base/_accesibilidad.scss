@@ -1,0 +1,18 @@
+
+// Siempre al final de la hoja compilada (último @use en main.scss)
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .card:hover,
+    .btn-rienda:hover,
+    .navbar-brand:hover .logonavbar,
+    .navbar-brand:focus .logonavbar {
+        transform: none;
+    }
+}

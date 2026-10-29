@@ -1,0 +1,58 @@
+@use "variables" as *;
+
+// ===== Breakpoints (mobile-first: siempre min-width) =====
+@mixin tablet {
+    @media (min-width: $bp-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $bp-desktop) {
+        @content;
+    }
+}
+
+// ===== Un item de transition: trans(propiedad, duración, easing) =====
+@function trans($propiedad, $duracion: $dur-normal, $easing: $ease-base) {
+    @return $propiedad $duracion $easing;
+}
+
+// ===== Contenedor Grid base de una página =====
+@mixin grilla-pagina($gap: $esp-lg) {
+    display: grid;
+    align-content: start;
+    grid-template-columns: 1fr;
+    gap: $gap;
+    padding: $esp-base;
+    flex: 1;
+
+    @include tablet {
+        padding: $esp-xl;
+    }
+}
+
+// ===== Estados hover / focus / active de los links del menú =====
+@mixin enlace-menu {
+    color: $color-crema;
+    font-weight: $peso-negrita;
+    border-radius: $radio-sm;
+    transition: trans(background-color), trans(color), trans(transform, $dur-corta);
+
+    &:hover {
+        background-color: $color-crema;
+        color: $color-marron;
+    }
+
+    &:focus {
+        background-color: $color-crema;
+        color: $color-verde;
+        outline: $borde-medio solid $color-verde;
+    }
+
+    &:active {
+        background-color: $color-verde;
+        color: $color-crema;
+        transform: scale($escala-presion);
+    }
+}

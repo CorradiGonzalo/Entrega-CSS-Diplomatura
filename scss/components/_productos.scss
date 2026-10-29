@@ -1,0 +1,59 @@
+@use "../utilities/variables" as *;
+
+.producto-img {
+    display: flex;
+    justify-content: center;
+    padding: $esp-lg;
+    border-radius: $radio-md;
+    background-color: $color-verde;
+}
+
+.producto-figura {
+    margin: 0;
+}
+
+.producto-foto {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: $radio-md;
+}
+
+.foto-base {
+    object-position: center 65%;
+}
+
+.producto-logo {
+    width: $logo-producto;
+    height: $logo-producto;
+}
+
+.producto-lista {
+    padding-left: $esp-lista;
+
+    li {
+        font-weight: $peso-normal;
+        font-style: normal;
+        margin-bottom: $esp-xs;
+    }
+}
+
+.precio {
+    color: $color-verde;
+    font-size: $fs-precio;
+    font-weight: $peso-negrita;
+
+    small {
+        font-size: $fs-base;
+        font-weight: $peso-normal;
+    }
+}
+
+.plan-destacado {
+    border: $borde-medio solid $color-verde;
+}
+
+.nota-precios {
+    font-size: $fs-chico;
+}

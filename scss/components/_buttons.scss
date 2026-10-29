@@ -1,0 +1,31 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.btn-rienda {
+    background-color: $color-verde;
+    border-color: $color-verde;
+    color: $color-crema;
+    font-weight: $peso-negrita;
+    transition: trans(background-color), trans(color), trans(transform, $dur-corta), trans(box-shadow);
+
+    &:hover {
+        background-color: $color-marron;
+        border-color: $color-marron;
+        color: $color-crema;
+        transform: translateY(-$esp-xxs);
+    }
+
+    &:focus {
+        background-color: $color-marron;
+        border-color: $color-marron;
+        color: $color-crema;
+        box-shadow: $anillo-boton;
+    }
+
+    &:active {
+        background-color: $color-verde-oscuro;
+        border-color: $color-verde-oscuro;
+        color: $color-crema;
+        transform: scale($escala-presion);
+    }
+}

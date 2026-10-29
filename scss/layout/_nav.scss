@@ -1,0 +1,25 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.navbar-rienda {
+    .nav-link {
+        @include enlace-menu;
+    }
+
+    .navbar-toggler {
+        border-color: $color-crema;
+        transition: trans(background-color), trans(transform, $dur-corta);
+
+        &:hover {
+            background-color: $fondo-hover-claro;
+        }
+
+        &:focus {
+            box-shadow: $anillo-toggler;
+        }
+
+        &:active {
+            transform: scale($escala-toggler);
+        }
+    }
+}

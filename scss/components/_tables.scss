@@ -1,0 +1,21 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.table-rienda {
+    --bs-table-bg: #{$color-tarjeta};
+    --bs-table-hover-bg: #{$color-fila-hover};
+    border-color: $color-marron;
+
+    thead th {
+        background-color: $color-marron;
+        color: $color-crema;
+    }
+
+    tbody tr {
+        transition: trans(background-color);
+
+        &:hover > * {
+            background-color: $color-fila-hover;
+        }
+    }
+}

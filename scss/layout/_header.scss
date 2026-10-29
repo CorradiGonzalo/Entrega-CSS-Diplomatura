@@ -1,0 +1,24 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.navbar-rienda {
+    background-color: $color-marron;
+}
+
+.logonavbar {
+    width: $logo-nav;
+    height: $logo-nav;
+    transition: trans(transform, $dur-logo, $ease-salida);
+}
+
+// El logo rota y crece al pasar el mouse
+.navbar-brand {
+    &:hover .logonavbar,
+    &:focus .logonavbar {
+        transform: rotate($giro-logo) scale($escala-logo-hover);
+    }
+
+    &:active .logonavbar {
+        transform: rotate(0deg) scale($escala-logo-presion);
+    }
+}

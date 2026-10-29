@@ -1,0 +1,108 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// ===== Home =====
+.home-layout {
+    @include grilla-pagina;
+    grid-template-areas:
+        "intro"
+        "plataformas"
+        "migracion"
+        "registros"
+        "galeria";
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "intro intro"
+            "plataformas migracion"
+            "registros registros"
+            "galeria galeria";
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "intro intro intro"
+            "plataformas plataformas migracion"
+            "registros registros registros"
+            "galeria galeria galeria";
+        gap: $esp-xl;
+    }
+}
+
+// Listas de registros: columnas fluidas
+.registros-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $esp-base;
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $esp-xl;
+    }
+}
+
+// ===== Sobre Nosotros =====
+.nosotros-layout {
+    @include grilla-pagina;
+    align-items: start;
+    grid-template-areas:
+        "titulo"
+        "historia"
+        "foto";
+
+    @include desktop {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "titulo titulo"
+            "historia foto";
+        gap: $esp-xl;
+    }
+}
+
+.area-foto img {
+    display: block;
+    width: 100%;
+}
+
+// ===== Contacto =====
+.contacto-layout {
+    @include grilla-pagina;
+    grid-template-areas:
+        "info"
+        "formulario";
+
+    @include desktop {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "info formulario";
+        gap: $esp-xl;
+    }
+}
+
+// ===== Catálogo y Precios =====
+.pagina-layout {
+    @include grilla-pagina($esp-xl);
+
+    @include desktop {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: none;
+
+        & > section {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+// ===== Asignación de áreas =====
+$areas: intro, plataformas, migracion, registros, galeria, titulo, historia, foto, info, formulario;
+
+@each $area in $areas {
+    .area-#{$area} {
+        grid-area: $area;
+    }
+}
