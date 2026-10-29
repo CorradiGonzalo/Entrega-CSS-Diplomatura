@@ -108,12 +108,14 @@ main li {
 
 .cierre-lista {
     color: #437045;
+    margin-top: 1.5rem;
 }
 
 /* ===== Layout: Home (Grid con áreas) ===== */
 /* Mobile: una sola columna, secciones apiladas al 100% */
 .home-layout {
     display: grid;
+    align-content: start;
     grid-template-columns: 1fr;
     grid-template-areas:
         "intro"
@@ -142,6 +144,7 @@ main li {
 /* ===== Layout: Sobre Nosotros (Grid con áreas) ===== */
 .nosotros-layout {
     display: grid;
+    align-content: start;
     grid-template-columns: 1fr;
     grid-template-areas:
         "titulo"
@@ -150,6 +153,10 @@ main li {
     gap: 1.5rem;
     padding: 1rem;
     flex: 1;
+}
+
+.nosotros-layout {
+    align-items: start;
 }
 
 .area-titulo { grid-area: titulo; }
@@ -164,6 +171,7 @@ main li {
 /* ===== Contacto ===== */
 .contacto-layout {
     display: grid;
+    align-content: start;
     grid-template-columns: 1fr;
     grid-template-areas:
         "info"
@@ -277,11 +285,6 @@ footer {
     .registros-grid {
         grid-template-columns: 1fr 1fr;
     }
-
-    footer {
-        flex-direction: row;
-        justify-content: space-between;
-    }
 }
 
 /* ===== Desktop ===== */
@@ -299,6 +302,11 @@ footer {
     .registros-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .nosotros-layout {
@@ -444,6 +452,7 @@ footer {
 /* ===== Páginas Catálogo y Precios ===== */
 .pagina-layout {
     display: grid;
+    align-content: start;
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 1rem;
@@ -456,6 +465,22 @@ footer {
     padding: 1.5rem;
     border-radius: 0.75rem;
     background-color: #3E6640;
+}
+
+.producto-figura {
+    margin: 0;
+}
+
+.producto-foto {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+.foto-base {
+    object-position: center 65%;
 }
 
 .producto-logo {
@@ -533,5 +558,63 @@ footer {
         grid-template-columns: 1fr 2fr;
         grid-template-areas: "info formulario";
         gap: 2rem;
+    }
+}
+
+/* ===== Animaciones propias ===== */
+/* 1) Transición de estado: el logo del navbar rota y crece al pasar el mouse */
+.logonavbar {
+    transition: transform 300ms ease-out;
+}
+
+.navbar-brand:hover .logonavbar,
+.navbar-brand:focus .logonavbar {
+    transform: rotate(-8deg) scale(1.1);
+}
+
+.navbar-brand:active .logonavbar {
+    transform: rotate(0deg) scale(0.95);
+}
+
+/* 1b) Botón: sube levemente al pasar el mouse */
+.btn-rienda:hover {
+    transform: translateY(-0.125rem);
+}
+
+/* 2) @keyframes de varios pasos: entrada suave de los títulos principales */
+@keyframes entrada-suave {
+    0% {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-0.25rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main h1 {
+    animation: entrada-suave 500ms ease-out both;
+}
+
+/* ===== Accesibilidad: reducir movimiento (siempre al final de la hoja) ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .card:hover,
+    .btn-rienda:hover,
+    .navbar-brand:hover .logonavbar,
+    .navbar-brand:focus .logonavbar {
+        transform: none;
     }
 }
